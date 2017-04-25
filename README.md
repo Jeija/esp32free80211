@@ -1,6 +1,8 @@
 # ESP32 802.11 Freedom Output
 <img src="rickroll.png" alt="Rickrolling with WiFi Networks" width="400px"/>
 
+***Warning:** This project is currently incompatible with the latest version of [esp32-wifi-lib](https://github.com/espressif/esp32-wifi-lib). In order to get this working, you will need to downgrade to an older version, tested with esp32-wifi-lib git commit `ffe5a4c14fe9c933c776fadc62fa9d409929e6f9`.*
+
 ## Introduction
 Even though Espressif open sourced their [IoT Development Framework](https://github.com/espressif/esp-idf), the underlying [esp32-wifi-lib](https://github.com/espressif/esp32-wifi-lib) remains closed source and sparsely documented. Since I still wanted to be able to send arbitrary IEEE 802.11 data frames, I took a look at the `ieee80211_freedom_output` function in `ieee80211_output.o` in `libnet80211.a`. By reverse engineering the assembly code I was able to find a workaround / hack that makes it possible to use `ieee80211_freedom_output` and force the ESP32 to send data or management frames with custom data.
 
